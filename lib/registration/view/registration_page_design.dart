@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/registration/model/user_input_data.dart';
 
+import '../../gloal/widget/otp_dilog.dart';
 import '../../size/measurement.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -111,6 +112,10 @@ class _RegistrationPageDesignState extends State<RegistrationPageDesign> {
             ),
             onPressed: () {
               CollectUserInputData().registrationRequiedData(mobile: controllerMobile.text, name:controllerName.text, gender: gender);
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => OtpPopUpDilog(context),
+              );
             },
             child: Text('Register'),
           ),
